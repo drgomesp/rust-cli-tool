@@ -4,4 +4,21 @@ version = "0.1.0"
 authors = ["Daniel Ribeiro <drgomesp@gmail.com>"]
 edition = "2018"
 
+[features]
+default = ["core"]
+
+core = [
+    "rust_cli_tool_core"
+]
+
 [dependencies]
+rust_cli_tool_core = { path = "rust_cli_tool_core", optional=true }
+failure = "*"
+
+[dev-dependencies]
+log = "*"
+simplelog = "*"
+
+[[example]]
+name = "cli_app"
+path = "examples/cli_app/main.rs"
